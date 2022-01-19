@@ -1,0 +1,14 @@
+#header * {
+  font-family: Abel;
+  font-size: 22px;
+}
+
+#header-brand {
+  font-size: 22px;
+  text-decoration: none;
+}
+
+#header img {
+  margin-right: 0.5em;
+  background-color: white;
+}

@@ -1,0 +1,13 @@
+.picture {
+  width: 50%;
+}
+.picture Button {
+  border-radius: 1em;
+}
+.picture img {
+  mix-blend-mode: multiply;
+  width: 100%;
+}
+.picture-name {
+  min-height: 7em;
+}
