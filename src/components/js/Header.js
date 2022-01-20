@@ -4,7 +4,9 @@ import FormControl from "react-bootstrap/FormControl";
 
 import { SearchContext } from "../../contexts/SearchContext";
 
-const Header = (props) => {
+import "../css/Header.css";
+
+const Header = () => {
   const { query, setQuery } = useContext(SearchContext);
 
   const isMobile = window.screen.width < 768;
@@ -23,7 +25,7 @@ const Header = (props) => {
         type="text"
         value={query}
         onChange={(event) => setQuery(event.target.value)}
-        placeholder="Search images..."
+        placeholder="Search Spacestagram..."
         className={`mx-auto mx-sm-4 ${
           isMobile && "mb-sm-5"
         } not-rounded border-white shadow`}

@@ -1,14 +1,8 @@
-#header * {
-  font-family: Abel;
-  font-size: 22px;
+#header {
+  opacity: 0.8;
+  transition: all 250ms;
 }
 
-#header-brand {
-  font-size: 22px;
-  text-decoration: none;
-}
-
-#header img {
-  margin-right: 0.5em;
-  background-color: white;
+#header:hover {
+  opacity: 1;
 }

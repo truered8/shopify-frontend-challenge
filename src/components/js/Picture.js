@@ -13,8 +13,8 @@ const Picture = (props) => {
 
   const [imageLoaded, _setImageLoaded] = useState(false);
   const pictureClassName = `picture w-${
-    props.isMobile ? "100" : "25"
-  } p-sm-1 m-0 d-inline-block rounded-lg`;
+    props.isMobile ? "75" : "50"
+  } p-sm-1 m-0 d-flex justify-content-center rounded-lg`;
 
   return (
     <div className={pictureClassName}>

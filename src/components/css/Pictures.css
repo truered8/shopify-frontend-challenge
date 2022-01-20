@@ -1,11 +1,8 @@
 .picture {
-  width: 50%;
+  width: 75%;
 }
 .picture Button {
   border-radius: 1em;
-}
-.picture img {
-  mix-blend-mode: multiply;
   width: 100%;
 }
 .picture-name {

@@ -14,13 +14,14 @@ const loaderStyle = `
   border-color: red;
 `;
 
-const Pictures = (props) => {
+const Pictures = () => {
   const isMobile = window.screen.width < 768;
   const numPictureIncrement = isMobile ? 5 : 12;
   const [numPictures, _setNumPictures] = useState(numPictureIncrement);
   const [availablePictures, _setAvailablePictures] = useState([]);
+
   useEffect(() => {
-    fetch("https://images-api.nasa.gov/search?media_type=image&q=star")
+    fetch("https://images-api.nasa.gov/search?media_type=image&q=planet")
       .then((response) => response.json())
       .then((responseJson) => {
         console.log(responseJson);
@@ -33,7 +34,10 @@ const Pictures = (props) => {
               image_url: item.links[0].href,
             };
           })
-        );
+        )
+          .map((value) => ({ value, sort: Math.random() }))
+          .sort((a, b) => a.sort - b.sort)
+          .map(({ value }) => value);
       })
       .then((pictures) => {
         _setAvailablePictures(pictures);
@@ -91,7 +95,10 @@ const Pictures = (props) => {
 
   return (
     <div className="mt-sm-3">
-      <div id="picture-list" className="d-inline-block mx-sm-3">
+      <div
+        id="picture-list"
+        className="d-flex flex-column align-items-center mx-sm-3"
+      >
         {displayPictures}
       </div>
       <DotLoader css={loaderStyle} color={"#123abc"} loading={loading} />
