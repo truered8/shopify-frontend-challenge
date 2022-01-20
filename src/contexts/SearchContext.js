@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 export const SearchContext = createContext();
 
-export default (props) => {
+const SearchContextProvider = (props) => {
   const [query, setQuery] = useState("");
 
   return (
@@ -11,3 +11,5 @@ export default (props) => {
     </SearchContext.Provider>
   );
 };
+
+export default SearchContextProvider;

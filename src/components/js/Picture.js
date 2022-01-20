@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import Button from "react-bootstrap/Button";
 import ClipLoader from "react-spinners/ClipLoader";
 
@@ -15,6 +15,7 @@ const Picture = (props) => {
   const pictureClassName = `picture w-${
     props.isMobile ? "100" : "25"
   } p-sm-1 m-0 d-inline-block rounded-lg`;
+
   return (
     <div className={pictureClassName}>
       <Button className="border-0 shadow bg-white text-body" onClick={onClick}>
