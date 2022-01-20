@@ -1,10 +1,10 @@
 .picture {
   width: 75%;
 }
-.picture Button {
+#picture-button {
   border-radius: 1em;
   width: 100%;
 }
 .picture-name {
-  min-height: 7em;
+  min-height: 2em;
 }

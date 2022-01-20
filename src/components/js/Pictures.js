@@ -30,6 +30,7 @@ const Pictures = () => {
             return {
               name: item.data[0].title,
               date: item.data[0].date_created.substring(0, 10),
+              description: item.data[0].description_508,
               id: uuidv4(),
               image_url: item.links[0].href,
             };

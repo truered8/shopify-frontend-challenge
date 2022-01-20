@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import ClipLoader from "react-spinners/ClipLoader";
+import { HandThumbsUp, HandThumbsUpFill } from "react-bootstrap-icons";
 
 const loaderStyle = `
   display: block;
@@ -9,16 +10,18 @@ const loaderStyle = `
 `;
 
 const Picture = (props) => {
-  const onClick = () => {};
-
   const [imageLoaded, _setImageLoaded] = useState(false);
+  const [liked, _setLiked] = useState(false);
   const pictureClassName = `picture w-${
     props.isMobile ? "75" : "50"
-  } p-sm-1 m-0 d-flex justify-content-center rounded-lg`;
+  } p-sm-1 m-sm-2 d-flex justify-content-center rounded-lg`;
 
   return (
     <div className={pictureClassName}>
-      <Button className="border-0 shadow bg-white text-body" onClick={onClick}>
+      <Button
+        id="picture-button"
+        className="border-0 clearfix shadow bg-white text-body"
+      >
         <img
           src={props.pictureJson.image_url}
           alt={props.pictureJson.name}
@@ -32,10 +35,18 @@ const Picture = (props) => {
           loading={!imageLoaded}
           size={100}
         />
-        <div className="picture-name p-md-2">
+        <div className="picture-name px-md-2">
           <strong>{props.pictureJson["name"]}</strong>
         </div>
-        {props.pictureJson["date"]}
+        <span className="text-center">{props.pictureJson["date"]}</span>
+        <Button
+          className="float-right p-sm-1 m-sm-1 rounded-circle"
+          onClick={() => _setLiked(!liked)}
+        >
+          {liked ? <HandThumbsUpFill /> : <HandThumbsUp />}
+        </Button>
+        <br />
+        {props.pictureJson["description"]}
       </Button>
     </div>
   );
